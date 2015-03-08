@@ -6,6 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
 
 	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("app03-context.xml");
+		
+		/*Bean0303 - Bean Intro
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean0303-context.xml");
 		
 		Bean0303 bean = context.getBean("_bean1", Bean0303.class);
@@ -17,8 +20,18 @@ public class Application {
 		
 		//this will print false since bean are singleton and reference to different bean
 		System.out.println(bean == bean3);
-				
-				
+		*/		
+		
+		/*Spring0304 - Constructor Injection A
+		ApplicationContext context = new ClassPathXmlApplicationContext("bean0304-context.xml");
+		
+		//This will create a bean with a constructor
+		Bean0304 bean = context.getBean("bean", Bean0304.class);
+		*/
+		
+		
+		
+		
 		( (ClassPathXmlApplicationContext)context ).close();         
 	}
 }

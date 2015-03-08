@@ -3,14 +3,47 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 
+	Bean definition with constructor and have a parameter
+	id = unique name of a bean
+	name = can be another name of a bean, multiple name can be separate4d by space
+	value = value of parameter
+	type = type of parameter
+	index = argument index
+	--> 
+
 	
 	<!-- 
 	Bean0305 - Constructor Injection B
 	Internal bean which could not access by other bean 
-	-->
+	
 	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
 		<constructor-arg type="ph.rico.spring.Bean0305B">
 			<bean class="ph.rico.spring.Bean0305B"/>
 		</constructor-arg>
 	</bean>
+	-->
+	
+	<!--  
+	Bean0305 - Constructor Injection B
+	External bean which can be reuse  
+	-->
+	<bean id="bean0305B" class="ph.rico.spring.Bean0305B"/>
+	 
+	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
+		<constructor-arg type="ph.rico.spring.Bean0305B">
+			<ref bean="bean0305B"/>	
+		</constructor-arg>
+		
+		<!-- Concise version of above 
+		<constructor-arg type="ph.rico.spring.Bean0305B" ref="bean0305B"/>
+		-->
+		
+		<!-- most concise version of above 
+		<constructor-arg name="bean" ref="bean0305B"/>
+		-->
+	</bean>
+	
+	
+	
 </beans>

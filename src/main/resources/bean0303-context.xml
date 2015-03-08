@@ -3,5 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<!-- 
+	Bean definition 
+	id = unique name of a bean
+	name = can be another name of a bean, multiple name can be separate4d by space
+	--> 
+	<bean id="bean" class="ph.rico.spring.Bean0303" name="_bean1 bean1a"/>
+	<bean id="bean2" class="ph.rico.spring.Bean0303" />
+	
 </beans>

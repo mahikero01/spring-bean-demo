@@ -6,9 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("bean0303-context.xml");
 		
-		BeanA beanA = context.getBean("BeanA", BeanA.class);
-		System.out.println(beanA.getField2());
+		Bean0303 bean = context.getBean("bean", Bean0303.class);
 	}
 }

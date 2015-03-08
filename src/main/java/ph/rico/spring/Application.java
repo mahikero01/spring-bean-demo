@@ -1,10 +1,14 @@
 package ph.rico.spring;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
+		
+		BeanA beanA = context.getBean("BeanA", BeanA.class);
+		System.out.println(beanA.getField2());
 	}
-
 }

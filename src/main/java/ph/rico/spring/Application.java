@@ -10,6 +10,7 @@ public class Application {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("app03-context.xml");
 		
+		
 		/*
 		//Bean0303 - Bean Intro
 		 

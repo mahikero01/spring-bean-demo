@@ -53,7 +53,7 @@
 	</bean>
 	-->
 	
-	<!--  External bean which can be reuse  -->
+		<!--  External bean which can be reuse
 	<bean id="bean0305B" class="ph.rico.spring.Bean0305B"/>
 	 
 	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
@@ -61,12 +61,58 @@
 			<ref bean="bean0305B"/>	
 		</constructor-arg>
 	</bean>	
+		-->
+		
 		<!-- Concise version of above 
 		<constructor-arg type="ph.rico.spring.Bean0305B" ref="bean0305B"/>
 	</bean>	
 		-->
+		
 		<!-- most concise version of above 
 		<constructor-arg name="bean" ref="bean0305B"/>
 	</bean>
 		-->
+		
+		
+		
+	<!-- Bean0305 - Setter Injection 2/2
+	<bean id="bean0306A" class="ph.rico.spring.Bean0306A">
+	-->
+		<!-- verbose configuration
+	<bean id="bean0306A" class="ph.rico.spring.Bean0306A"> 	
+		<property name="age">
+			<value>21</value>
+		</property>
+	</bean>
+		-->
+		
+		<!-- Concise configuration
+	<bean id="bean0306A" class="ph.rico.spring.Bean0306A"> 	
+		<property name="age" value="27" />
+	</bean>
+	 	-->
+	 	
+	 	<!-- configuration with 2 setter (1 ref and 1 primitive) 
+	 	in which is bean field is internal
+	<bean id="bean0306A" class="ph.rico.spring.Bean0306A"> 	
+		<property name="age" value="27" />
+		<property name="bean0306B">
+			<bean class="ph.rico.spring.Bean0306B"/>
+		</property>
+	</bean>
+		-->
+		
+		<!-- configuration with 2 setter (1 ref and 1 primitive) 
+	 	in which is bean field is external -->
+	<bean id="bean0306B" class="ph.rico.spring.Bean0306B"/>
+	
+	<bean id="bean0306A" class="ph.rico.spring.Bean0306A"> 	
+		<property name="age" value="27" />
+		<property name="bean0306B" ref="bean0306B">
+			
+		</property>
+	</bean>
+		
+		
+		
 </beans>

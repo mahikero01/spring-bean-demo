@@ -10,6 +10,8 @@ public class Application {
 		
 		/*
 		//Bean0303 - Bean Intro
+		 
+		//bean creation 
 		Bean0303 bean = context.getBean("_bean1", Bean0303.class);
 		Bean0303 bean2 = context.getBean("bean", Bean0303.class);
 		Bean0303 bean3 = context.getBean("bean2", Bean0303.class);
@@ -32,13 +34,21 @@ public class Application {
 		
 		
 		
-		
+		/*
 		//Bean0305 - Constructor Injection 2/2
 		 
 		//This will create a bean with a constructor
 		Bean0305A bean = context.getBean("bean0305A", Bean0305A.class);
-		 
+		 */
 		
+		
+		
+		/*
+		//Bean0306 - Setter Injection
+		 */
+		//This will create a bean with properties
+		Bean0306A bean = context.getBean("bean0306A", Bean0306A.class);
+		bean.getBean0306B().execute(); 
 		
 		
 		( (ClassPathXmlApplicationContext)context ).close();         

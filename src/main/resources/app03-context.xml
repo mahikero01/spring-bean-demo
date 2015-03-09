@@ -17,14 +17,35 @@
  	<!--
  	Bean0303 - Bean Intro
  	-->
+ 	<!-- 
 	<bean id="bean" class="ph.rico.spring.Bean0303" name="_bean1 bean1a"/>
 	<bean id="bean2" class="ph.rico.spring.Bean0303" />
-	
+	-->
 	
 	
 	
 	<!-- 
-	Bean0305 - Constructor Injection B
+	Bean0304 - Constructor Injection 1/2
+	-->
+	<bean id="bean" class="ph.rico.spring.Bean0304">
+		<!-- verbose version
+		<constructor-arg>
+			<value>Test</value>
+		</constructor-arg>
+		 -->
+		 
+		<!--  concise version of above this is use for single parameter constructor
+		<constructor-arg value="26" type="int"/>
+		-->
+		
+		<!-- this is for multiple parameter constructor -->
+		<constructor-arg value="sarmiento" index="1"/>
+		<constructor-arg value="rico" index="0"/>
+		
+	</bean>
+	
+	<!-- 
+	Bean0305 - Constructor Injection 2/2
 	Internal bean which could not access by other bean 
 	
 	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
@@ -37,7 +58,8 @@
 	<!--  
 	Bean0305 - Constructor Injection B
 	External bean which can be reuse  
-	
+	-->
+	<!-- 
 	<bean id="bean0305B" class="ph.rico.spring.Bean0305B"/>
 	 
 	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
@@ -45,11 +67,11 @@
 			<ref bean="bean0305B"/>	
 		</constructor-arg>
 		
-		<!-- Concise version of above 
+		 Concise version of above 
 		<constructor-arg type="ph.rico.spring.Bean0305B" ref="bean0305B"/>
 		
 		
-		<!-- most concise version of above 
+		 most concise version of above 
 		<constructor-arg name="bean" ref="bean0305B"/>
 	
 	</bean>

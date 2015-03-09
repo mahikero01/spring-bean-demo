@@ -11,7 +11,17 @@
 	type = type of parameter
 	index = argument index
 	--> 
-
+	
+	
+	
+ 	<!--
+ 	Bean0303 - Bean Intro
+ 	-->
+	<bean id="bean" class="ph.rico.spring.Bean0303" name="_bean1 bean1a"/>
+	<bean id="bean2" class="ph.rico.spring.Bean0303" />
+	
+	
+	
 	
 	<!-- 
 	Bean0305 - Constructor Injection B
@@ -27,7 +37,7 @@
 	<!--  
 	Bean0305 - Constructor Injection B
 	External bean which can be reuse  
-	-->
+	
 	<bean id="bean0305B" class="ph.rico.spring.Bean0305B"/>
 	 
 	<bean id="bean0305A" class="ph.rico.spring.Bean0305A">
@@ -37,13 +47,13 @@
 		
 		<!-- Concise version of above 
 		<constructor-arg type="ph.rico.spring.Bean0305B" ref="bean0305B"/>
-		-->
+		
 		
 		<!-- most concise version of above 
 		<constructor-arg name="bean" ref="bean0305B"/>
-		-->
-	</bean>
 	
+	</bean>
+	-->
 	
 	
 </beans>

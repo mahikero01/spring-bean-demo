@@ -119,8 +119,10 @@
 		
 		
 		<!-- Bean0307 - C and P Namespace -->
-	
-	<bean id="bean0307B" class="ph.rico.spring.Bean0307B" c:name="Test" />
+	<!-- normal format below
+	<bean id="bean0307B" class="ph.rico.spring.Bean0307B" c:name="Test" /> -->
+	<!-- below can be used using _0 as index of argument -->
+	<bean id="bean0307B" class="ph.rico.spring.Bean0307B" c:_0="Test" />
 		
 	<bean id="bean0307A" class="ph.rico.spring.Bean0307A"> 	
 		<property name="age" value="21" />

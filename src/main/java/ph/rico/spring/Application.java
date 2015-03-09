@@ -24,12 +24,20 @@ public class Application {
 		
 		
 		/*
-		//Spring0304 - Constructor Injection 1/2
+		//Bean0304 - Constructor Injection 1/2
 				
 		//This will create a bean with a constructor
 		Bean0304 bean = context.getBean("bean", Bean0304.class);
 		*/
 		
+		
+		
+		
+		//Bean0305 - Constructor Injection 2/2
+		 
+		//This will create a bean with a constructor
+		Bean0305A bean = context.getBean("bean0305A", Bean0305A.class);
+		 
 		
 		
 		

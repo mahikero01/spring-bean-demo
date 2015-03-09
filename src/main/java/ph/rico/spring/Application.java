@@ -45,10 +45,20 @@ public class Application {
 		
 		/*
 		//Bean0306 - Setter Injection
-		 */
+		 
 		//This will create a bean with properties
 		Bean0306A bean = context.getBean("bean0306A", Bean0306A.class);
 		bean.getBean0306B().execute(); 
+		*/
+		
+		
+		
+		/*
+		//Bean0307 - C and P Namespace
+		 */
+		//This will create a bean with properties
+		Bean0307A bean = context.getBean("bean0307A", Bean0307A.class);
+		bean.getBean0307B().execute(); 
 		
 		
 		( (ClassPathXmlApplicationContext)context ).close();         

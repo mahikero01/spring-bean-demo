@@ -1,5 +1,7 @@
 package ph.rico.spring;
 
+import java.util.Calendar;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -55,11 +57,22 @@ public class Application {
 		
 		/*
 		//Bean0307 - C and P Namespace
-		 */
+		
 		//This will create a bean with properties
 		Bean0307A bean = context.getBean("bean0307A", Bean0307A.class);
 		bean.getBean0307B().execute(); 
+		*/
 		
+		
+		
+		/*
+		 * Bean0308 - Bean Instantiation with Factories
+		 */ 
+		
+		Bean0308A bean = context.getBean("sprBean0308A", Bean0308A.class);
+		System.out.println(bean.getYear());
+		
+		Bean0308B bean2 = context.getBean("sprBean0308B", Bean0308B.class);
 		
 		( (ClassPathXmlApplicationContext)context ).close();         
 	}

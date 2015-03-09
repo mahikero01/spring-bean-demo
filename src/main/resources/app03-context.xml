@@ -15,6 +15,9 @@
 	index = argument index
 	c:nameOfArgumentOfConstructor = initial value of argument of constructor (C namespace must be tick before use)
 	p:nameOfPropertyOfClass = set value of field of object using the setter method (P namespace must be tick before use)
+	scope = scope of spring bean either singleton,prototype, session, session
+	factory-bean = class of type factory
+	factory=method = method to create the class
 	--> 
 	
 	
@@ -149,5 +152,13 @@
 	<bean id="customFactory" class="ph.rico.spring.Bean0308CCustomFactory" />
 	<bean id="sprBean0308B" factory-bean="customFactory" factory-method="getInstanceOfBean0308B"/>
 	
+	
+	
+	<!-- Bean0309 - Bean Scope -->
+	
+	<!--  -->
+	<bean id="sprBeanProto" class="ph.rico.spring.Bean0309ProtoType" scope="prototype" />
+	
+	<bean id="sprBnSingleton" class="ph.rico.spring.Bean0309Singleton" scope="singleton" />
 		 
 </beans>

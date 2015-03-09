@@ -68,13 +68,30 @@ public class Application {
 		
 		/*
 		 * Bean0308 - Bean Instantiation with Factories
-		 */ 
-		
+		 
 		Bean0308A bean = context.getBean("sprBean0308A", Bean0308A.class);
 		System.out.println(bean.getYear());
 		
 		Bean0308B bean2 = context.getBean("sprBean0308B", Bean0308B.class);
+		*/
 		
+		
+		
+		/*
+		 * Bean0309 - Bean Scope
+		 */ 
+		 Bean0309ProtoType bean = context.getBean("sprBeanProto", Bean0309ProtoType.class);
+		 Bean0309ProtoType bean2 = context.getBean("sprBeanProto", Bean0309ProtoType.class);
+		 
+		 Bean0309Singleton bean3 = context.getBean("sprBnSingleton", Bean0309Singleton.class);
+		 Bean0309Singleton bean4 = context.getBean("sprBnSingleton", Bean0309Singleton.class);
+		 
+		 //this should be false due to both bean has different instance
+		 System.out.println(bean == bean2);
+		 
+		 //this should be true due to both bean has only one instance
+		 System.out.println(bean3 == bean4);
+		 
 		( (ClassPathXmlApplicationContext)context ).close();         
 	}
 }

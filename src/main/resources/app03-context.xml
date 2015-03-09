@@ -14,6 +14,7 @@
 	type = type of parameter
 	index = argument index
 	c:nameOfArgumentOfConstructor = initial value of argument of constructor (C namespace must be tick before use)
+	p:nameOfPropertyOfClass = set value of field of object using the setter method (P namespace must be tick before use)
 	--> 
 	
 	
@@ -122,11 +123,8 @@
 	<!-- normal format below
 	<bean id="bean0307B" class="ph.rico.spring.Bean0307B" c:name="Test" /> -->
 	<!-- below can be used using _0 as index of argument -->
-	<bean id="bean0307B" class="ph.rico.spring.Bean0307B" c:_0="Test" />
+	<bean id="bean" class="ph.rico.spring.Bean0307B" c:_0="Test" />
 		
-	<bean id="bean0307A" class="ph.rico.spring.Bean0307A"> 	
-		<property name="age" value="21" />
-		<property name="bean0307B" ref="bean0307B" />
-	</bean>
+	<bean id="bean0307A" class="ph.rico.spring.Bean0307A" p:age="27" p:bean0307B-ref="bean" /> 	
 		
 </beans>

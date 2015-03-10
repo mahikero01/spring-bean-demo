@@ -3,6 +3,7 @@ package ph.rico.spring;
 import java.util.Calendar;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
@@ -79,7 +80,7 @@ public class Application {
 		
 		/*
 		 * Bean0309 - Bean Scope
-		 */ 
+		 
 		 Bean0309ProtoType bean = context.getBean("sprBeanProto", Bean0309ProtoType.class);
 		 Bean0309ProtoType bean2 = context.getBean("sprBeanProto", Bean0309ProtoType.class);
 		 
@@ -91,7 +92,32 @@ public class Application {
 		 
 		 //this should be true due to both bean has only one instance
 		 System.out.println(bean3 == bean4);
-		 
+		 */
+		
+		
+		
+		/*
+		 Bean0310 - Method Injection and Application Context Aware
+		 */ 
+		//Comparing 2 singleton bean with prototype object dependencies 
+		//Bean0310Singleton singleton = context.getBean("sprBnSingle", Bean0310Singleton.class);
+		//Bean0310Prototype proto = singleton.createProto();
+		//Bean0310Prototype proto2 = singleton.createProto();
+		
+		//Comparing 2 singleton bean with prototype object dependencies 
+		//Application Context Applied to give 2 different instance
+		//Bean0310SingletonContextAware singleton = context.getBean("sprBnSingleAware", Bean0310SingletonContextAware.class);
+		//Bean0310Prototype proto = singleton.createProto();
+		//Bean0310Prototype proto2 = singleton.createProto();
+		
+		//Comparing 2 singleton bean with prototype object dependencies 
+		//Method Injection to give 2 different instance
+		Bean0310SingletonMethodInject singleton = context.getBean("sprBnSingleMethod", Bean0310SingletonMethodInject.class);
+		Bean0310Prototype proto = singleton.createProto();
+		Bean0310Prototype proto2 = singleton.createProto();
+		
+		
+		 System.out.println(proto == proto2 ? "Same Instance":"Separate Instance");
 		( (ClassPathXmlApplicationContext)context ).close();         
 	}
 }

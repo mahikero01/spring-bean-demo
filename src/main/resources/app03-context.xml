@@ -143,22 +143,55 @@
 		</constructor-arg>
 	</bean>
 		-->
+		<!-- Factory created as external Class with static method to create instance 
 	<bean id="calendarBean" class="java.util.Calendar" factory-method="getInstance" />	
 	<bean id="sprBean0308A" class="ph.rico.spring.Bean0308A">
 		<constructor-arg ref="calendarBean" />
 	</bean>
-	
-		<!-- Factory Class returning an instance of another class -->
+		-->
+		<!-- Factory Class returning an instance of another class 
 	<bean id="customFactory" class="ph.rico.spring.Bean0308CCustomFactory" />
 	<bean id="sprBean0308B" factory-bean="customFactory" factory-method="getInstanceOfBean0308B"/>
-	
+		-->
 	
 	
 	<!-- Bean0309 - Bean Scope -->
 	
-	<!--  -->
+		<!--  
 	<bean id="sprBeanProto" class="ph.rico.spring.Bean0309ProtoType" scope="prototype" />
 	
 	<bean id="sprBnSingleton" class="ph.rico.spring.Bean0309Singleton" scope="singleton" />
+		-->
+	
+	
+	
+	<!-- Bean0310 - Method Injection and Application Context Aware -->
+	
+		<!-- singleton bean with a object dependency that is prototype  
+	<bean id="sprBnProto" class="ph.rico.spring.Bean0310Prototype" scope="prototype" />	 
+	
+	<bean id="sprBnSingle" class="ph.rico.spring.Bean0310Singleton" scope="singleton">
+		<property name="prototypeBean" ref="sprBnProto" />
+	</bean>
+		 -->
+		 <!-- 
+		 singleton bean with a object dependency that is prototype that implements 
+		 Application Context Aware 
+	<bean id="sprBnProto" class="ph.rico.spring.Bean0310Prototype" scope="prototype" />	 
+		 
+	<bean id="sprBnSingleAware" class="ph.rico.spring.Bean0310SingletonContextAware">
+		<property name="prototypeBean" ref="sprBnProto" />
+	</bean>	 
+		 --> 
+		 <!-- 
+		 singleton bean with a object dependency that is prototype that uses  
+		 Method Injection -->
+	<bean id="sprBnProto" class="ph.rico.spring.Bean0310Prototype" scope="prototype" />	 
+		 
+	<bean id="sprBnSingleMethod" class="ph.rico.spring.Bean0310SingletonMethodInject">
+		<lookup-method bean="sprBnProto" name="createProto"/>
+	</bean>	
+		 
+		 
 		 
 </beans>

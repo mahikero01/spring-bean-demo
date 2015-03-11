@@ -185,13 +185,46 @@
 		 --> 
 		 <!-- 
 		 singleton bean with a object dependency that is prototype that uses  
-		 Method Injection -->
+		 Method Injection 
 	<bean id="sprBnProto" class="ph.rico.spring.Bean0310Prototype" scope="prototype" />	 
 		 
 	<bean id="sprBnSingleMethod" class="ph.rico.spring.Bean0310SingletonMethodInject">
 		<lookup-method bean="sprBnProto" name="createProto"/>
 	</bean>	
+		 -->
 		 
 		 
 		 
+	<!-- 0310 - Collections --> 
+		<!-- Initial configuration -->
+	<bean id="bean" class="ph.rico.spring.sf0311Collections.Bean">
+		<property name="list">
+			<list>
+				<value>Mary</value>
+				<value>Sam</value>
+				<value>Bob</value>
+				<value>Jack</value>
+			</list>
+		</property>
+		<property name="set" >
+			<set>
+				<value>Mary</value>
+				<value>Sum</value>
+				<value>Bob</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="a" value="Apple"/>			
+				<entry key="b" value="Ball"/>			
+				<entry key="c" value="Cake"/>			
+			</map>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="a">Apple</prop>
+				<prop key="b">Ball</prop>
+			</props>
+		</property>
+	</bean>	 
 </beans>

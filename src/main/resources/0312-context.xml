@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	<bean id="beanD" class="ph.rico.spring.sf0312AutoWiring.BeanD" />
+
+	<!-- without aut owiring
+	<bean id="beanB" class="ph.rico.spring.sf0312AutoWiring.BeanB">
+		<property name="beanD" ref="beanD"></property>
+	</bean>
+	 -->
+	 <!-- with auto wiring -->
+	 <bean id="beanB" class="ph.rico.spring.sf0312AutoWiring.BeanB" autowire="byType"/>
+
+</beans>

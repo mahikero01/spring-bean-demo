@@ -4,7 +4,7 @@ package ph.rico.spring.sf0312AutoWiring;
 
 public class BeanD  {
 
-	private String name;
+	private String name = "Testing";
 
 	public BeanD() {
 		super();

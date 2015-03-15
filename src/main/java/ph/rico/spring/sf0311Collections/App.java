@@ -29,5 +29,10 @@ public class App {
 		for(Object key: bean.getProperties().keySet()) {
 			System.out.println(bean.getProperties().getProperty((String) key));
 		}
+		
+		System.out.println("\nPrinting List:");
+		for(ObjectA token: bean.getListO()) {
+			System.out.println(token);
+		}
 	}
 }

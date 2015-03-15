@@ -198,7 +198,12 @@
 	<!-- 0310 - Collections --> 
 		<!-- Initial configuration -->
 	<bean id="bean" class="ph.rico.spring.sf0311Collections.Bean">
-		<property name="list">
+		<property name="listO">
+			<list>
+				<bean class="ph.rico.spring.sf0311Collections.ObjectA" />
+			</list>
+		</property>	
+		<property name="list">	
 			<list>
 				<value>Mary</value>
 				<value>Sam</value>
